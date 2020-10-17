@@ -7,9 +7,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-danger">
-                <div class="panel-heading"><strong>Confirm Bulk Removal</strong></div>
+                <div class="panel-heading"><strong>Подтверждение массового удаления</strong></div>
                 <div class="panel-body">
-                    <strong>Warning:</strong> The following operation will remove {{ table.rows|length }} {{ obj_type_plural }} from {{ parent_obj }}. Please carefully review the {{ obj_type_plural }} to be removed and confirm below.
+                    <strong>Внимание:</strong> Следующая операция удалит {{ table.rows|length }} {{ obj_type_plural }} из {{ parent_obj }}. Пожалуйста проверьте выбранные записи {{ obj_type_plural }} и подтвердите удаление.
                 </div>
             </div>
         </div>
@@ -29,8 +29,8 @@
                     {{ field }}
                 {% endfor %}
                 <div class="text-center">
-                    <button type="submit" name="_confirm" class="btn btn-danger">Delete these {{ table.rows|length }} {{ obj_type_plural }}</button>
-                    <a href="{{ return_url }}" class="btn btn-default">Cancel</a>
+                    <button type="submit" name="_confirm" class="btn btn-danger">Удалить {{ table.rows|length }} {{ obj_type_plural }}</button>
+                    <a href="{{ return_url }}" class="btn btn-default">Отмена</a>
                 </div>
             </form>
         </div>

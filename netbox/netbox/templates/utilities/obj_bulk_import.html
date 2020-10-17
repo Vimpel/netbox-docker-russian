@@ -6,17 +6,17 @@
 {% block tabs %}{% endblock %}
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>{% block title %}{{ obj_type|bettertitle }} Bulk Import{% endblock %}</h1>
+            <h1>{% block title %}{{ obj_type|bettertitle }} массовый импорт{% endblock %}</h1>
             {% if form.non_field_errors %}
                 <div class="panel panel-danger">
-                    <div class="panel-heading"><strong>Errors</strong></div>
+                    <div class="panel-heading"><strong>Ошибки</strong></div>
                     <div class="panel-body">
                         {{ form.non_field_errors }}
                     </div>
                 </div>
             {% endif %}
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#csv" role="tab" data-toggle="tab">CSV</a></li>
+                <li role="presentation" class="active"><a href="#csv" role="tab" data-toggle="tab">CSV формат</a></li>
             </ul>
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="csv">
@@ -25,9 +25,9 @@
                         {% render_form form %}
                         <div class="form-group">
                             <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Применить</button>
                                 {% if return_url %}
-                                    <a href="{{ return_url }}" class="btn btn-default">Cancel</a>
+                                    <a href="{{ return_url }}" class="btn btn-default">Отменить</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -37,14 +37,14 @@
                     {% if fields %}
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <strong>CSV Field Options</strong>
+                                <strong>CSV описание полей</strong>
                             </div>
                             <table class="table">
                                 <tr>
-                                    <th>Field</th>
-                                    <th>Required</th>
-                                    <th>Accessor</th>
-                                    <th>Description</th>
+                                    <th>Наименование поля</th>
+                                    <th>Обязательное поле</th>
+                                    <th>Связанное</th>
+                                    <th>Описание</th>
                                 </tr>
                                 {% for name, field in fields.items %}
                                     <tr>
@@ -90,7 +90,7 @@
                                                 {{ field.label }}<br />
                                             {% endif %}
                                             {% if field|widget_type == 'dateinput' %}
-                                                <small class="text-muted">Format: YYYY-MM-DD</small>
+                                                <small class="text-muted">Формат даты: YYYY-MM-DD</small>
                                             {% elif field|widget_type == 'checkboxinput' %}
                                                 <small class="text-muted">Specify "true" or "false"</small>
                                             {% endif %}
@@ -100,12 +100,11 @@
                             </table>
                         </div>
                         <p class="small text-muted">
-                            <i class="fa fa-check"></i> Required fields <strong>must</strong> be specified for all
-                            objects.
+                            <i class="fa fa-check"></i> Обязательные поля <strong>должны быть укзаны</strong> для
+                            всех объетов.
                         </p>
                         <p class="small text-muted">
-                            <i class="fa fa-info-circle"></i> Related objects may be referenced by any unique attribute.
-                            For example, <code>vrf.rd</code> would identify a VRF by its route distinguisher.
+                            <i class="fa fa-info-circle"></i> Связанные поля.
                         </p>
                     {% endif %}
                 </div>

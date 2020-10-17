@@ -9,7 +9,7 @@
 	<div class="col-md-8 col-md-offset-2">
         {% if form.non_field_errors %}
             <div class="panel panel-danger">
-                <div class="panel-heading"><strong>Errors</strong></div>
+                <div class="panel-heading"><strong>Ошибки</strong></div>
                 <div class="panel-body">
                     {{ form.non_field_errors }}
                 </div>
@@ -20,10 +20,10 @@
 		    {% render_form form %}
             <div class="form-group">
                 <div class="col-md-12 text-right">
-                    <button type="submit" name="_create" class="btn btn-primary">Submit</button>
-                    <button type="submit" name="_addanother" class="btn btn-primary">Submit and Import Another</button>
+                    <button type="submit" name="_create" class="btn btn-primary">Применить</button>
+                    <button type="submit" name="_addanother" class="btn btn-primary">Применить и импортировать еще</button>
 		            {% if return_url %}
-                        <a href="{{ return_url }}" class="btn btn-default">Cancel</a>
+                        <a href="{{ return_url }}" class="btn btn-default">Отмена</a>
                     {% endif %}
                 </div>
             </div>

@@ -16,12 +16,12 @@
                             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#docs_modal"><i class="fa fa-question"></i></button>
                         </div>
                     {% endif %}
-                    {% block title %}{% if obj.pk %}Editing {{ obj_type }} {{ obj }}{% else %}Add a new {{ obj_type }}{% endif %}{% endblock %}
+                    {% block title %}{% if obj.pk %}Редактирование {{ obj_type }} {{ obj }}{% else %}Создание новой записи для {{ obj_type }}{% endif %}{% endblock %}
                 </h3>
                 {% block tabs %}{% endblock %}
                 {% if form.non_field_errors %}
                     <div class="panel panel-danger">
-                        <div class="panel-heading"><strong>Errors</strong></div>
+                        <div class="panel-heading"><strong>Ошибки</strong></div>
                         <div class="panel-body">
                             {{ form.non_field_errors }}
                         </div>
@@ -43,12 +43,12 @@
             <div class="col-md-6 col-md-offset-3 text-right">
                 {% block buttons %}
                     {% if obj.pk %}
-                        <button type="submit" name="_update" class="btn btn-primary">Update</button>
+                        <button type="submit" name="_update" class="btn btn-primary">Обновить</button>
                     {% else %}
-                        <button type="submit" name="_create" class="btn btn-primary">Create</button>
-                        <button type="submit" name="_addanother" class="btn btn-primary">Create and Add Another</button>
+                        <button type="submit" name="_create" class="btn btn-primary">Создать</button>
+                        <button type="submit" name="_addanother" class="btn btn-primary">Добавить и создать еще</button>
                     {% endif %}
-                    <a href="{{ return_url }}" class="btn btn-default">Cancel</a>
+                    <a href="{{ return_url }}" class="btn btn-default">Отмена</a>
                 {% endblock %}
             </div>
         </div>
