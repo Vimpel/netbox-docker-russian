@@ -1,5 +1,6 @@
 *.sql.gz
 .netbox
 .initializers
-docker-compose.override.yml
+**/__pycache__
 *.pem
+.DS_Store

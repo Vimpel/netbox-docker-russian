@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb81a934-1bed-40c7-8ca3-2bff1360b4dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../configuration/configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/../configuration/configuration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netbox/circuits/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/netbox/circuits/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netbox/dcim/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/netbox/dcim/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netbox/dcim/models/devices.py" beforeDir="false" afterPath="$PROJECT_DIR$/netbox/dcim/models/devices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netbox/dcim/models/sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/netbox/dcim/models/sites.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,5 +66,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

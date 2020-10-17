@@ -36,18 +36,21 @@ class Region(MPTTModel, ChangeLoggedModel):
         related_name='children',
         blank=True,
         null=True,
-        db_index=True
+        db_index=True,
+        verbose_name='родитель'
     )
     name = models.CharField(
         max_length=50,
-        unique=True
+        unique=True,
+        verbose_name='имя'
     )
     slug = models.SlugField(
         unique=True
     )
     description = models.CharField(
         max_length=200,
-        blank=True
+        blank=True,
+        verbose_name='описание'
     )
 
     objects = TreeManager()
@@ -56,6 +59,10 @@ class Region(MPTTModel, ChangeLoggedModel):
 
     class MPTTMeta:
         order_insertion_by = ['name']
+
+    class Meta:
+        verbose_name = 'регион'
+        verbose_name_plural = 'регионы'
 
     def __str__(self):
         return self.name

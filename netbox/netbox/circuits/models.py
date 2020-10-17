@@ -30,7 +30,8 @@ class Provider(ChangeLoggedModel, CustomFieldModel):
     """
     name = models.CharField(
         max_length=50,
-        unique=True
+        unique=True,
+        verbose_name='Имя'
     )
     slug = models.SlugField(
         unique=True
@@ -79,6 +80,8 @@ class Provider(ChangeLoggedModel, CustomFieldModel):
 
     class Meta:
         ordering = ['name']
+        verbose_name = "поставщик услуг"
+        verbose_name_plural = "постащики услуг"
 
     def __str__(self):
         return self.name

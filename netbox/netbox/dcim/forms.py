@@ -175,7 +175,8 @@ class MACAddressField(forms.Field):
 class RegionForm(BootstrapMixin, forms.ModelForm):
     parent = DynamicModelChoiceField(
         queryset=Region.objects.all(),
-        required=False
+        required=False,
+        #verbose_name='родитель'
     )
     slug = SlugField()
 

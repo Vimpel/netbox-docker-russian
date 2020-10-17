@@ -156,6 +156,8 @@ class DeviceType(ChangeLoggedModel, CustomFieldModel):
             ['manufacturer', 'model'],
             ['manufacturer', 'slug'],
         ]
+        verbose_name='тип устройства'
+        verbose_name_plural='типы устройств'
 
     def __str__(self):
         return self.model
