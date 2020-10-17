@@ -6,7 +6,7 @@
 {% block tabs %}{% endblock %}
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>{% block title %}{{ obj_type|bettertitle }} массовый импорт{% endblock %}</h1>
+            <h1>Массовый импорт {% block title %}{{ obj_type|bettertitle }} {% endblock %}</h1>
             {% if form.non_field_errors %}
                 <div class="panel panel-danger">
                     <div class="panel-heading"><strong>Ошибки</strong></div>
@@ -43,7 +43,7 @@
                                 <tr>
                                     <th>Наименование поля</th>
                                     <th>Обязательное поле</th>
-                                    <th>Связанное</th>
+                                    <th>Связанное поле</th>
                                     <th>Описание</th>
                                 </tr>
                                 {% for name, field in fields.items %}
@@ -75,7 +75,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                                <h4 class="modal-title"><code>{{ name }}</code> Choices</h4>
+                                                                <h4 class="modal-title"><code>{{ name }}</code> Выбор</h4>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <ul>{% for value, label in field.choices %}{% if value %}<li>{{ value }}</li>{% endif %}{% endfor %}</ul>
@@ -92,7 +92,7 @@
                                             {% if field|widget_type == 'dateinput' %}
                                                 <small class="text-muted">Формат даты: YYYY-MM-DD</small>
                                             {% elif field|widget_type == 'checkboxinput' %}
-                                                <small class="text-muted">Specify "true" or "false"</small>
+                                                <small class="text-muted">Указать "true" или "false"</small>
                                             {% endif %}
                                         </td>
                                     </tr>
@@ -104,7 +104,7 @@
                             всех объетов.
                         </p>
                         <p class="small text-muted">
-                            <i class="fa fa-info-circle"></i> Связанные поля.
+                            <i class="fa fa-info-circle"></i> В связанных полях указывается ссылка на нужное поле объета. Например, поле Name.
                         </p>
                     {% endif %}
                 </div>
