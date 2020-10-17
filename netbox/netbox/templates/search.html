@@ -2,7 +2,7 @@
 {% load helpers %}
 {% load form_helpers %}
 
-{% block title %}Search{% endblock %}
+{% block title %}Поиск{% endblock %}
 
 {% block content %}
     {% if request.GET.q %}
@@ -16,9 +16,9 @@
                         <a href="{{ obj_type.url }}" class="btn btn-primary pull-right">
                             <span class="fa fa-arrow-right" aria-hidden="true"></span>
                             {% if obj_type.table.page.has_next %}
-                                See all {{ obj_type.table.page.paginator.count }} results
+                                Показать все {{ obj_type.table.page.paginator.count }} результаты
                             {% else %}
-                                Refine search
+                                Повторить поиск
                             {% endif %}
                         </a>
                     <div class="clearfix"></div>
@@ -27,7 +27,7 @@
                 <div class="col-md-2" style="padding-top: 20px;">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <strong>Search Results</strong>
+                            <strong>Результаты поиска</strong>
                         </div>
                         <div class="list-group">
                             {% for obj_type in results %}
@@ -41,7 +41,7 @@
                 </div>
             </div>
         {% else %}
-            <h3 class="text-muted text-center">No results found</h3>
+            <h3 class="text-muted text-center">Ничего не найдено</h3>
         {% endif %}
     {% else %}
         <div class="row" style="margin-top: 150px;">
@@ -49,14 +49,14 @@
                 <form action="{% url 'search' %}" method="get" class="form form-horizontal">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <strong>Search</strong>
+                            <strong>Поиск</strong>
                         </div>
                         <div class="panel-body">
                             {% render_form form %}
                         </div>
                         <div class="panel-footer text-right">
                             <button type="submit" class="btn btn-primary">
-                                <span class="fa fa-search" aria-hidden="true"></span> Search
+                                <span class="fa fa-search" aria-hidden="true"></span> Найти
                             </button>
                         </div>
                     </div>
