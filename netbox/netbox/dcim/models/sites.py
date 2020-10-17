@@ -106,7 +106,8 @@ class Site(ChangeLoggedModel, CustomFieldModel):
     """
     name = models.CharField(
         max_length=50,
-        unique=True
+        unique=True,
+        verbose_name='наименование'
     )
     _name = NaturalOrderingField(
         target_field='name',
@@ -119,21 +120,24 @@ class Site(ChangeLoggedModel, CustomFieldModel):
     status = models.CharField(
         max_length=50,
         choices=SiteStatusChoices,
-        default=SiteStatusChoices.STATUS_ACTIVE
+        default=SiteStatusChoices.STATUS_ACTIVE,
+        verbose_name='статус'
     )
     region = models.ForeignKey(
         to='dcim.Region',
         on_delete=models.SET_NULL,
         related_name='sites',
         blank=True,
-        null=True
+        null=True,
+        verbose_name='регион'
     )
     tenant = models.ForeignKey(
         to='tenancy.Tenant',
         on_delete=models.PROTECT,
         related_name='sites',
         blank=True,
-        null=True
+        null=True,
+        verbose_name='учреждение'
     )
     facility = models.CharField(
         max_length=50,
@@ -144,51 +148,60 @@ class Site(ChangeLoggedModel, CustomFieldModel):
         blank=True,
         null=True,
         verbose_name='ASN',
-        help_text='32-bit autonomous system number'
+        help_text='32-bit автономный номер'
     )
     time_zone = TimeZoneField(
-        blank=True
+        blank=True,
+        verbose_name='часовой пояс'
     )
     description = models.CharField(
         max_length=200,
-        blank=True
+        blank=True,
+        verbose_name='описание'
     )
     physical_address = models.CharField(
         max_length=200,
-        blank=True
+        blank=True,
+        verbose_name='фактический адрес'
     )
     shipping_address = models.CharField(
         max_length=200,
-        blank=True
+        blank=True,
+        verbose_name='адрес доставки'
     )
     latitude = models.DecimalField(
         max_digits=8,
         decimal_places=6,
         blank=True,
         null=True,
-        help_text='GPS coordinate (latitude)'
+        verbose_name='широта',
+        help_text='GPS координаты (широта)'
     )
     longitude = models.DecimalField(
         max_digits=9,
         decimal_places=6,
         blank=True,
         null=True,
-        help_text='GPS coordinate (longitude)'
+        verbose_name='долгота',
+        help_text='GPS координаты (долгота)'
     )
     contact_name = models.CharField(
         max_length=50,
-        blank=True
+        blank=True,
+        verbose_name='ФИО ответственного'
     )
     contact_phone = models.CharField(
         max_length=20,
-        blank=True
+        blank=True,
+        verbose_name='контактный телефон'
     )
     contact_email = models.EmailField(
         blank=True,
-        verbose_name='Contact E-mail'
+        verbose_name='электронная почта'
     )
     comments = models.TextField(
-        blank=True
+        blank=True,
+        verbose_name='коментарии'
     )
     custom_field_values = GenericRelation(
         to='extras.CustomFieldValue',
@@ -196,7 +209,8 @@ class Site(ChangeLoggedModel, CustomFieldModel):
         object_id_field='obj_id'
     )
     images = GenericRelation(
-        to='extras.ImageAttachment'
+        to='extras.ImageAttachment',
+        verbose_name='изображения'
     )
     tags = TaggableManager(through=TaggedItem)
 
@@ -221,6 +235,8 @@ class Site(ChangeLoggedModel, CustomFieldModel):
 
     class Meta:
         ordering = ('_name',)
+        verbose_name = 'адрес'
+        verbose_name_plural = 'адреса'
 
     def __str__(self):
         return self.name

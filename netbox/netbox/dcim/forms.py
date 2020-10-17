@@ -153,7 +153,7 @@ class ComponentForm(BootstrapMixin, forms.Form):
 class MACAddressField(forms.Field):
     widget = forms.CharField
     default_error_messages = {
-        'invalid': 'MAC address must be in EUI-48 format',
+        'invalid': 'MAC адрес должен быть в формате EUI-48',
     }
 
     def to_python(self, value):
@@ -246,15 +246,15 @@ class SiteForm(BootstrapMixin, TenancyForm, CustomFieldModelForm):
             'time_zone': StaticSelect2(),
         }
         help_texts = {
-            'name': "Full name of the site",
-            'facility': "Data center provider and facility (e.g. Equinix NY7)",
+            'name': "Адрес местоположения (например: г. Москва, ул. Ивана Сусанина, д. 1)",
+            'facility': "Код региона",
             'asn': "BGP autonomous system number",
-            'time_zone': "Local time zone",
-            'description': "Short description (will appear in sites list)",
-            'physical_address': "Physical location of the building (e.g. for GPS)",
-            'shipping_address': "If different from the physical address",
-            'latitude': "Latitude in decimal format (xx.yyyyyy)",
-            'longitude': "Longitude in decimal format (xx.yyyyyy)"
+            'time_zone': "Часовой пояс",
+            'description': "Краткое описание, вспомогательная информация",
+            'physical_address': "Фактический адрес с индексом",
+            'shipping_address': "Адрес доставки, если отличается от фактического",
+            'latitude': "Широта в цифровом формате (xx.yyyyyy)",
+            'longitude': "Долгота в цифровом формате (xx.yyyyyy)"
         }
 
 
