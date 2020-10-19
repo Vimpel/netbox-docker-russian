@@ -142,7 +142,7 @@ class Site(ChangeLoggedModel, CustomFieldModel):
     facility = models.CharField(
         max_length=50,
         blank=True,
-        help_text='Код региона'
+        help_text='код региона'
     )
     asn = ASNField(
         blank=True,
