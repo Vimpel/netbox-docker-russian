@@ -1,9 +1,9 @@
 {% if images %}
     <table class="table table-hover panel-body">
         <tr>
-            <th>Name</th>
-            <th>Size</th>
-            <th>Created</th>
+            <th>Имя файла</th>
+            <th>Размер</th>
+            <th>Загружено</th>
             <th></th>
         </tr>
         {% for attachment in images %}
@@ -16,12 +16,12 @@
                 <td>{{ attachment.created }}</td>
                 <td class="text-right noprint">
                     {% if perms.extras.change_imageattachment %}
-                        <a href="{% url 'extras:imageattachment_edit' pk=attachment.pk %}" class="btn btn-warning btn-xs" title="Edit image">
+                        <a href="{% url 'extras:imageattachment_edit' pk=attachment.pk %}" class="btn btn-warning btn-xs" title="Редактировать изображение">
                             <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
                         </a>
                     {% endif %}
                     {% if perms.extras.delete_imageattachment %}
-                        <a href="{% url 'extras:imageattachment_delete' pk=attachment.pk %}" class="btn btn-danger btn-xs" title="Delete image">
+                        <a href="{% url 'extras:imageattachment_delete' pk=attachment.pk %}" class="btn btn-danger btn-xs" title="Удалить изображение">
                             <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
                         </a>
                     {% endif %}
@@ -31,6 +31,6 @@
     </table>
 {% else %}
     <div class="panel-body">
-        <span class="text-muted">None</span>
+        <span class="text-muted">нет изображений</span>
     </div>
 {% endif %}
