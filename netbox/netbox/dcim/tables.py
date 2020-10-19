@@ -168,7 +168,7 @@ class RegionTable(BaseTable):
         orderable=False
     )
     site_count = tables.Column(
-        verbose_name='Sites'
+        verbose_name='Адреса'
     )
     actions = ButtonsColumn(Region)
 

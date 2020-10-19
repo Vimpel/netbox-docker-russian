@@ -42,7 +42,7 @@ class Region(MPTTModel, ChangeLoggedModel):
     name = models.CharField(
         max_length=50,
         unique=True,
-        verbose_name='имя'
+        verbose_name='название'
     )
     slug = models.SlugField(
         unique=True
@@ -142,7 +142,7 @@ class Site(ChangeLoggedModel, CustomFieldModel):
     facility = models.CharField(
         max_length=50,
         blank=True,
-        help_text='Local facility ID or description'
+        help_text='Код региона'
     )
     asn = ASNField(
         blank=True,
